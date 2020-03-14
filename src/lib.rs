@@ -20,7 +20,7 @@ pub fn greet() -> Result<JsValue, JsValue> {
     console_error_panic_hook::set_once();
 
     // Your code goes here!
-    let result = JsValue::from_str("Hello world!");
+    let result = JsValue::from_str("Hello from Rust!");
     console::log_1(&result);
 
     Ok(result)

@@ -1,4 +1,4 @@
-async function load() {
+export const from_wasm = async function load() {
     const {greet} = await import("../pkg/index.js")
         // .then(obj => {
         //     const value = obj.greet();
@@ -8,6 +8,7 @@ async function load() {
         .catch(console.error);
 
     console.log("also js:", greet());
-}
+    return greet();
+};
 
-load();
+// load();

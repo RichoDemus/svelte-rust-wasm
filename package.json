@@ -5,7 +5,9 @@
   "scripts": {
     "build": "rimraf dist pkg && webpack",
     "start": "rimraf dist pkg && webpack-dev-server --open -d",
-    "test": "cargo test && wasm-pack test --headless"
+    "test": "cargo test && wasm-pack test --headless",
+    "build_svelte": "cross-env NODE_ENV=production webpack",
+    "dev_svelte": "webpack-dev-server --content-base public"
   },
   "devDependencies": {
     "@wasm-tool/wasm-pack-plugin": "^1.1.0",
@@ -13,6 +15,13 @@
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.3",
     "webpack-dev-server": "^3.7.1",
-    "rimraf": "^3.0.0"
+    "rimraf": "^3.0.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.1",
+    "mini-css-extract-plugin": "^0.6.0",
+    "serve": "^11.0.0",
+    "style-loader": "^0.23.1",
+    "svelte": "^3.0.0",
+    "svelte-loader": "2.13.3"
   }
 }

@@ -1,4 +1,6 @@
-
+node_modules/
+target/
+pkg/
 # Created by https://www.gitignore.io/api/macos,windows,intellij
 # Edit at https://www.gitignore.io/?templates=macos,windows,intellij
 
