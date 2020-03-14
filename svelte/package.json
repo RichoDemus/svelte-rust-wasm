@@ -6,8 +6,8 @@
     "build": "rimraf dist pkg && webpack",
     "start": "rimraf dist pkg && webpack-dev-server --open -d",
     "test": "cargo test && wasm-pack test --headless",
-    "build_svelte": "cross-env NODE_ENV=production webpack",
-    "dev_svelte": "webpack-dev-server --content-base public"
+    "build_svelte": "rimraf dist pkg && cross-env NODE_ENV=production webpack",
+    "dev_svelte": "rimraf dist pkg && webpack-dev-server --content-base dist"
   },
   "devDependencies": {
     "@wasm-tool/wasm-pack-plugin": "^1.1.0",
