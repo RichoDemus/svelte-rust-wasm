@@ -53,7 +53,8 @@ module.exports = {
 			filename: '[name].css'
 		}),
 		new WasmPackPlugin({
-			crateDirectory: __dirname,
+			crateDirectory: "../rust/",
+			outDir: "../svelte/pkg",
 		}),
 	],
 	devtool: prod ? false: 'source-map'
