@@ -1,6 +1,6 @@
 <script>
 	import {onMount} from "svelte";
-	import {from_wasm} from "./index";
+	import {from_wasm} from "./call_wasm";
 
 	export let name;
 	let fromWasm = "";

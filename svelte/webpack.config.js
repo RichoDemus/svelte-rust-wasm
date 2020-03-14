@@ -9,7 +9,7 @@ const dist = path.resolve(__dirname, "public");
 
 module.exports = {
 	entry: {
-		bundle: ['./js/main.js']
+		bundle: ['./src/main.js']
 	},
 	resolve: {
 		alias: {
