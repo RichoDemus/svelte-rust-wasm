@@ -4,6 +4,8 @@ Uses `wasm-pack` and `wasm-pack-plugin` to compire Rust code to wasm and load it
 
 Had to use webpack instead of rollup due to more mature wasm support
 
+Check it out at [richodemus.github.io/svelte-rust-wasm](https://richodemus.github.io/svelte-rust-wasm/)
+
 ## How to install
 
 ```sh
@@ -23,6 +25,12 @@ npm run dev
 # Builds the project and places it into the `dist` folder.
 npm run build
 ```
+
+## How to deploy to gh pages
+
+````sh
+npm run build && npm run deploy
+````
 
 ## How to run unit tests
 
