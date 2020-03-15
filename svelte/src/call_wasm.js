@@ -1,5 +1,7 @@
+const imp = import("../pkg/index.js");
+
 export const from_wasm = async function load() {
-    const {greet} = await import("../pkg/index.js")
+    const {greet} = await imp
         // .then(obj => {
         //     const value = obj.greet();
         //     console.log("from js:",value);
@@ -9,6 +11,16 @@ export const from_wasm = async function load() {
 
     console.log("also js:", greet());
     return greet();
+};
+
+export const objFromWasm = async () => {
+    const {get_object} = await imp;
+    return get_object();
+};
+
+export const throwException = async () => {
+  const {throw_exception} = await imp;
+  return throw_exception;
 };
 
 // load();
