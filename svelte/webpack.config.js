@@ -8,15 +8,20 @@ const prod = mode === 'production';
 const dist = path.resolve(__dirname, "public");
 
 module.exports = {
+	experiments: {
+asyncWebAssembly: true,
+},
+
 	entry: {
 		bundle: ['./src/main.js']
 	},
 	resolve: {
 		alias: {
-			svelte: path.resolve('node_modules', 'svelte')
+			svelte: path.resolve('node_modules', 'svelte/src/runtime')
 		},
 		extensions: ['.mjs', '.js', '.svelte'],
-		mainFields: ['svelte', 'browser', 'module', 'main']
+		mainFields: ['svelte', 'browser', 'module', 'main'],
+    conditionNames: ['svelte', 'browser', 'import']
 	},
 	output: {
 		path: __dirname + '/dist',
@@ -53,9 +58,11 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: '[name].css'
 		}),
-		new CopyPlugin([
-			{ from: 'public', to: '.' },
-		]),
+		new CopyPlugin({
+			patterns: [
+{ from: 'public', to: '.' },
+			]
+		}),
 		new WasmPackPlugin({
 			crateDirectory: "../rust/",
 			outDir: "../svelte/pkg",
